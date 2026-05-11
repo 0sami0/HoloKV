@@ -2,7 +2,7 @@
 
 **Author:** Sami Hilali (@HilaliSami42552)  
 **Status:** Open Research Draft (Mathematical Proof-of-Concept)  
-**Read the Paper:**[HoloKV_Whitepaper.pdf](./HoloKV_Whitepaper.pdf)
+**Read the Paper:**[HoloKV_Whitepaper pdf](./HoloKV.pdf)
 
 ---
 
