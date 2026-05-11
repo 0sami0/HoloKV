@@ -16,7 +16,7 @@ HoloKV is an independent research initiative. The core mathematics (Orthogonal P
 ## 🧠 What is HoloKV?
 As Large Language Models scale, the KV-Cache scales linearly at $\mathcal{O}(N)$, creating a massive "Memory Wall." Standard compression methods drop tokens or quantize precision, which degrades reasoning.
 
-**HoloKV** takes a geometric approach inspired by telecommunications (CDMA). Instead of appending new memory slots, HoloKV multiplexes (stacks) $k$ temporal tokens into a *single* physical physical memory slot using static, orthogonal $+1/-1$ phase keys. 
+**HoloKV** takes a geometric approach inspired by telecommunications (CDMA). Instead of appending new memory slots, HoloKV multiplexes (stacks) $k$ temporal tokens into a *single* physical memory slot using static, orthogonal $+1/-1$ phase keys. 
 
 ### Key Innovations:
 1. **Holographic Superposition:** Compresses KV memory by 75% to 87.5% ($k=4$ to $k=8$) without permanent token eviction.
