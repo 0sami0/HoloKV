@@ -5,7 +5,7 @@
 **Read the Paper:**[HoloKV_Whitepaper pdf](./HoloKV.pdf)
 
 
-## 🚀 Latest Breakthrough: Perfect Zero-Shot Orthogonal Extraction
+## 🚀 Latest Breakthrough: A Compute-Constrained Proof of Concept.
 Using a deterministic Walsh-Hadamard phase matrix and an end-to-end Knowledge Distillation pipeline, the HoloKV PyTorch simulator successfully extracted a target zero-shot reasoning token from a $k=4$ (75% compressed) superimposed noise block.
 
 **Terminal Output from Qwen-0.5B (HoloKV-Injected):**
