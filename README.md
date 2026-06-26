@@ -10,29 +10,6 @@ Executive Summary: After rigorous empirical testing and community feedback (cred
 While the O(N/k) phase-shifting mathematics successfully compress memory and allow for exact-match retrieval in "Peaked Attention" (highly focused) scenarios, the architecture suffers from catastrophic cross-talk during "Diffuse Attention" (standard reading flow). Superimposing static noise across hundreds of attended tokens forces the network to act as a low-pass filter, permanently blurring token identities. For efficient KV-Cache compression, Deferred-Hierarchical methods (like CASK and KVarN) remain the state-of-the-art.
 All code, simulators, and training pipelines remain open-sourced here as a formalized negative result for future researchers.
 
-Using a deterministic Walsh-Hadamard phase matrix and an end-to-end Knowledge Distillation pipeline, the HoloKV PyTorch simulator successfully extracted a target zero-shot reasoning token from a $k=4$ (75% compressed) superimposed noise block.
-
-**Terminal Output from Qwen-0.5B (HoloKV-Injected):**
-[4/4] Running HoloKV Inference (75% Cache Compressed)...
-
-==================================================
-                FINAL BENCHMARK                   
-==================================================
-Target Prompt Code : 'ALPHA-77'
-Baseline Output    : 'ALPHA-77.'
-HoloKV Output      : 'ALPHA-77.'
-
-[✓] ARCHITECTURE VERIFIED: Perfect Zero-Shot Denoising Achieved.
-
-
----
-
-### 🚨 Call for Hardware Collaborators (Triton / CUDA)
-HoloKV is an independent research initiative. The core mathematics (Orthogonal Phase-Shifting, RoPE Even-Boundary Rule, Variance Normalization) have been successfully modeled in PyTorch. However, to achieve the actual physical $\mathcal{O}(N/k)$ VRAM reduction, we need to build a custom **SRAM Active Accumulation Buffer** kernel. 
-
-**If you are an engineer experienced in OpenAI Triton or CUDA C++ and want to help build a custom FlashAttention-style kernel to make infinite-context LLMs a reality, please DM me on X or open an Issue!**
-
----
 
 ## 🧠 What is HoloKV?
 As Large Language Models scale, the KV-Cache scales linearly at $\mathcal{O}(N)$, creating a massive "Memory Wall." Standard compression methods drop tokens or quantize precision, which degrades reasoning.
@@ -48,6 +25,3 @@ As Large Language Models scale, the KV-Cache scales linearly at $\mathcal{O}(N)$
 ## 📂 Repository Contents
 * `HoloKV_Whitepaper.pdf`: The full architectural draft detailing the math, scaling laws, and hardware theory.
 * `holokv_math_simulator.py`: A PyTorch implementation of the HoloKV forward pass. *Note: This is a strict mathematical simulator used to validate the phase-shifting, RoPE compatibility, and Softmax normalization. It does not yield physical VRAM savings as it currently lacks the fused SRAM hardware kernel.*
-
-## 🤝 Let's Build This
-The math works. The next step is the hardware execution. Let's shatter the Memory Wall together.
