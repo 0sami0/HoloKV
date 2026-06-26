@@ -5,7 +5,11 @@
 **Read the Paper:**[HoloKV_Whitepaper pdf](./HoloKV.pdf)
 
 
-## 🚀 Latest Breakthrough: A Compute-Constrained Proof of Concept.
+⚠️ Project Status: Archived (Negative Result)
+Executive Summary: After rigorous empirical testing and community feedback (credit to the hipfire-akimbo team), the HoloKV CDMA superposition architecture has been proven unviable for continuous, diffuse language modeling.
+While the O(N/k) phase-shifting mathematics successfully compress memory and allow for exact-match retrieval in "Peaked Attention" (highly focused) scenarios, the architecture suffers from catastrophic cross-talk during "Diffuse Attention" (standard reading flow). Superimposing static noise across hundreds of attended tokens forces the network to act as a low-pass filter, permanently blurring token identities. For efficient KV-Cache compression, Deferred-Hierarchical methods (like CASK and KVarN) remain the state-of-the-art.
+All code, simulators, and training pipelines remain open-sourced here as a formalized negative result for future researchers.
+
 Using a deterministic Walsh-Hadamard phase matrix and an end-to-end Knowledge Distillation pipeline, the HoloKV PyTorch simulator successfully extracted a target zero-shot reasoning token from a $k=4$ (75% compressed) superimposed noise block.
 
 **Terminal Output from Qwen-0.5B (HoloKV-Injected):**
